@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { TodoType } from "../types";
 import { useTodos } from "../hooks/useTodo";
-import { todo } from "node:test";
-import { API_URL } from "@/url";
+import { API_URL } from "@/constants/url";
 
 type TodoProps = {
   todo: TodoType;
 };
-
-async function fetcher(key: string) {
-  return fetch(key).then((res) => res.json());
-}
 
 const Todo = ({ todo }: TodoProps) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);

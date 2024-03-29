@@ -6,13 +6,13 @@ import useSWR from "swr";
 import { TodoType } from "./types";
 import { useRef } from "react";
 import { useTodos } from "./hooks/useTodo";
-import { API_URL } from "@/url";
+import { API_URL } from "@/constants/url";
 
 type TodoProps = {
   todo: TodoType;
 };
 
-export default function Home({ todo }: TodoProps) {
+export default function Home() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { todos, isLoading, error, mutate } = useTodos();
 
